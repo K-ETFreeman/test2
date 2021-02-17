@@ -360,6 +360,10 @@ body {
             align-items: flex-end;
   }
 
+  .car__part::before {
+    display: none;
+  }
+
   .car__part::after {
     position: relative;
     -webkit-box-flex: 1;

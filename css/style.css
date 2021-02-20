@@ -6729,7 +6729,6 @@ header .adaptive-menu {
 }
 
 .question {
-  max-width: 930px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6751,14 +6750,16 @@ header .adaptive-menu {
 .question__from svg {
   margin-right: 20px;
   width: 50px;
+  min-width: 50px;
   height: 50px;
+  min-height: 50px;
   border-radius: 50%;
   border: 1px solid #49b408;
 }
 
 .question__name {
   font-size: 20px;
-  color: black !important;
+  color: black;
 }
 
 .question__date {
@@ -6767,10 +6768,10 @@ header .adaptive-menu {
 }
 
 .question__text {
-  color: black !important;
-  padding: 25px 10px !important;
-  font-size: 18px !important;
-  line-height: 1.5 !important;
+  color: black;
+  padding: 25px 10px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .question__answercount {
@@ -6784,7 +6785,6 @@ header .adaptive-menu {
 }
 
 .answer {
-  max-width: 930px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6861,8 +6861,8 @@ header .adaptive-menu {
 }
 
 .answer__name {
-  color: black !important;
-  font-size: 18px !important;
+  color: black;
+  font-size: 18px;
 }
 
 .answer__info {
@@ -6879,7 +6879,7 @@ header .adaptive-menu {
 }
 
 .answer__date {
-  font-size: 12px !important;
+  font-size: 12px;
   font-style: italic;
 }
 
@@ -6889,15 +6889,15 @@ header .adaptive-menu {
   display: flex;
 }
 
-.answer__text {
-  color: black !important;
+.answer div.answer__text {
+  color: black;
   margin-left: 72px;
   font-family: 'Lato', sans-serif;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
-  font-size: 18px !important;
-  line-height: 1.5 !important;
-  margin-bottom: 0 !important;
+  font-weight: 500;
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
 .answer__secondary {
@@ -6914,17 +6914,17 @@ header .adaptive-menu {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-left: 72px;
-  margin-right: 10px;
+  margin: 10px 10px 0px 72px;
 }
 
 .answer__link {
-  font-size: 12px !important;
+  font-size: 12px;
   font-style: italic;
   margin-right: 20px;
 }
 
 .answer__likes {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6946,6 +6946,19 @@ header .adaptive-menu {
   fill: white;
   stroke: #49b408;
   stroke-width: .7;
+  -webkit-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.answer__likes.active svg {
+  fill: #78f62c;
+  stroke: #358306;
+}
+
+.title-page-and-broad h1 {
+  line-height: 1.2;
+  margin-bottom: .5em;
 }
 
 @media (min-width: 576px) {
@@ -8192,6 +8205,12 @@ header .adaptive-menu {
   }
 }
 
+@media (max-width: 768px) {
+  .title-page-and-broad h1 {
+    font-size: calc(20px + (100vw - 320px)  / 448 * (15));
+  }
+}
+
 @media (max-width: 767px) {
   .container {
     max-width: 540px;
@@ -8435,6 +8454,77 @@ header .adaptive-menu {
 @media only screen and (max-width: 620px) and (max-width: 576px) {
   .popup__body .popup__content .popup-form .popup-btns {
     max-width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .question__text {
+    margin-bottom: 0;
+  }
+
+  .answer_admin {
+    -webkit-box-shadow: 0 0 8px rgba(53, 131, 6, 0.6);
+            box-shadow: 0 0 8px rgba(53, 131, 6, 0.6);
+  }
+
+  .answer {
+    padding: 15px;
+    margin-left: 0;
+  }
+
+  .answer__from {
+    height: auto;
+  }
+
+  .answer__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .answer div.answer__text {
+    margin-left: 10px;
+    padding-top: 20px;
+  }
+
+  .answer__secondary {
+    margin-left: 10px;
+  }
+
+  .question__name,
+  .question div.answer__text,
+  .question div.question__text,
+  .answer__name,
+  .answer div.answer__text,
+  .answer div.question__text {
+    font-size: 16px;
+  }
+
+  .question__from svg,
+  .question__from .icon-logo,
+  .answer__from svg,
+  .answer__from .icon-logo {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 33px;
+  }
+
+  .delivery-description {
+    padding-top: 15px;
+  }
+
+  .marg-head {
+    padding-top: 30px;
   }
 }
 

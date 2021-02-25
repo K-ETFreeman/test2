@@ -1,3 +1,11 @@
+.companies724cfbf {
+  padding-left: 0;
+}
+
+.companies724cfbf li + li {
+  margin-top: 17px;
+}
+
 .company724cfbf {
   --logo-width: 100px;
   --padding: 7px;
@@ -14,6 +22,7 @@
   border-radius: 5px;
   border: 2px solid #619028;
   position: relative;
+  list-style-type: none;
 }
 
 .company724cfbf__logo {
@@ -67,6 +76,10 @@
 }
 
 @media (max-width: 768px) {
+  .companies724cfbf li + li {
+    margin-top: 10px;
+  }
+
   .company724cfbf__logo {
     position: static;
     display: inline-block;
